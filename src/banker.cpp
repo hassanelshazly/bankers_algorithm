@@ -6,19 +6,40 @@ int need_matrix(vector<vector<int>> &alloc_m,
 {
     try
     {
-        int n, m;
-        cout << "Enter the number of the processes: ";
-        cin >> n;
-        cout << "Enter the number of the resources: ";
-        cin >> m;
+        int n = 0, m = 0;
+        do
+        {
+            cout << "Enter the number of the processes: ";
+            cin >> n;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (!(cin))
+            {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "invalid input\n";
+            }
+        } while (n <= 0);
 
-        alloc_m.resize(m);
-        max_m.resize(m);
+        do
+        {
+            cout << "Enter the number of the resources: ";
+            cin >> m;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (!(cin))
+            {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "invalid input\n";
+            }
+        } while (m <= 0);
+
+        alloc_m.resize(n);
+        max_m.resize(n);
         avail_v.resize(m);
         for (int i = 0; i < n; i++)
         {
-            alloc_m[i].resize(n);
-            max_m[i].resize(n);
+            alloc_m[i].resize(m);
+            max_m[i].resize(m);
         }
 
         cout << "Enter the allocated matrix\n";

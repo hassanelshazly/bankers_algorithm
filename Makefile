@@ -14,6 +14,9 @@
 SRC_DIR = src
 OBJ_DIR = obj
 
+# check for OBJ_DIR
+$(shell [ -d $(OBJ_DIR) ] || mkdir $(OBJ_DIR))
+
 SOURCES  := $(wildcard ${SRC_DIR}/*.cpp)
 INCLUDES := -Iinclude
 

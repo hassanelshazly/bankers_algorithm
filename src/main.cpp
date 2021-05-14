@@ -2,11 +2,9 @@
 #include <vector>
 #include <algorithm>
 
-#include "helper_functions.h"
+#include "banker.h"
 
 using namespace std;
-
-
 
 int main()
 {
