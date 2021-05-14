@@ -1,0 +1,7 @@
+# Files ignored by git repositories
+
+obj/
+
+*.out
+*.pdf
+*.exe
