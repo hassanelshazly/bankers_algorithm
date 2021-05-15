@@ -2,37 +2,11 @@
 
 int need_matrix(vector<vector<int>> &alloc_m,
                 vector<vector<int>> &max_m,
-                vector<int> &avail_v)
+                vector<int> &avail_v,
+                int n, int m)
 {
     try
     {
-        int n = 0, m = 0;
-        do
-        {
-            cout << "Enter the number of the processes: ";
-            cin >> n;
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            if (!(cin))
-            {
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "invalid input\n";
-            }
-        } while (n <= 0);
-
-        do
-        {
-            cout << "Enter the number of the resources: ";
-            cin >> m;
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            if (!(cin))
-            {
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "invalid input\n";
-            }
-        } while (m <= 0);
-
         alloc_m.resize(n);
         max_m.resize(n);
         avail_v.resize(m);
@@ -110,14 +84,14 @@ int request(vector<vector<int>> &alloc_m,
             vector<int> &avail_v,
             vector<int> &request_v,
             vector<int> &safe_sequence,
-            int i)
+            int req)
 {
     // save the system state
-    vector<int> alloc_saved = alloc_m[i];
+    vector<int> alloc_saved = alloc_m[req];
     vector<int> avail_saved = avail_v;
 
     // check for limits
-    if (!(alloc_m[i] + request_v <= max_m[i]))
+    if (!(alloc_m[req] + request_v <= max_m[req]))
         return 2;
 
     if (!(request_v <= avail_v))
@@ -125,7 +99,7 @@ int request(vector<vector<int>> &alloc_m,
 
     // pretend a new state, check if the new state is safe
     // roll back if it's not
-    alloc_m[i] += request_v;
+    alloc_m[req] += request_v;
     avail_v -= request_v;
 
     if (is_safe(alloc_m, max_m, avail_v, safe_sequence))
@@ -136,7 +110,7 @@ int request(vector<vector<int>> &alloc_m,
     else
     {
         // roll back
-        alloc_m[i] -= request_v;
+        alloc_m[req] -= request_v;
         avail_v += request_v;
         return 1;
     }

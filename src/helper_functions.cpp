@@ -68,11 +68,12 @@ vector<int> &operator-=(vector<int> &v1,
     return v1;
 }
 
-vector<int> &print_sequence(const vector<int> &seq)
+vector<int> &print_sequence(const vector<int> &seq, int req)
 {
-
     cout << "<";
+    if(req > 0)
+        cout << "P" << req << "req, ";
     for (int i = 0; i < seq.size() - 1; i++)
-        cout << "P" << i << ", ";
+        cout << "P" << seq[i] << ", ";
     cout << "P" << seq.back() << ">\n";
 }

@@ -11,7 +11,8 @@ using namespace std;
 
 int need_matrix(vector<vector<int>> &alloc_m,
                 vector<vector<int>> &max_m,
-                vector<int> &avail_v);
+                vector<int> &avail_v,
+                int n, int m);
 
 bool is_safe(const vector<vector<int>> &alloc_m,
              const vector<vector<int>> &max_m,
@@ -23,6 +24,6 @@ int request(vector<vector<int>> &alloc_m,
             vector<int> &avail_v,
             vector<int> &request_v,
             vector<int> &safe_sequence,
-            int i);
+            int req);
 
 #endif
