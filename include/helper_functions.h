@@ -1,3 +1,9 @@
+/**
+ * 
+ * Overloading of arithmetic operators for vectors and matrices
+ * 
+ */
+
 #ifndef _HELPER_FUNCTIONS_
 #define _HELPER_FUNCTIONS_
 

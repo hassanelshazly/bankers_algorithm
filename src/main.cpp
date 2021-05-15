@@ -92,7 +92,7 @@ int main()
         {
             request_v.resize(m);
             int req;
-            cout << "Enter the requested index:\n";
+            cout << "Enter the requested index: ";
             cin >> req;
             cout << "Enter the requested resources:\n";
             for (int i = 0; i < m; i++)
