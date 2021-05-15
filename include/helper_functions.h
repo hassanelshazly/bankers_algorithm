@@ -32,6 +32,6 @@ vector<int> &operator+=(vector<int> &v1,
 vector<int> &operator-=(vector<int> &v1,
                         const vector<int> &v2);
 
-vector<int> &print_sequence(const vector<int> &seq, int req = -1);
+void print_sequence(const vector<int> &seq, int req = -1);
 
 #endif

@@ -68,7 +68,7 @@ vector<int> &operator-=(vector<int> &v1,
     return v1;
 }
 
-vector<int> &print_sequence(const vector<int> &seq, int req)
+void print_sequence(const vector<int> &seq, int req)
 {
     cout << "<";
     if(req > 0)
