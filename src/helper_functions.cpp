@@ -71,7 +71,7 @@ vector<int> &operator-=(vector<int> &v1,
 void print_sequence(const vector<int> &seq, int req)
 {
     cout << "<";
-    if(req > 0)
+    if(req >= 0)
         cout << "P" << req << "req, ";
     for (int i = 0; i < seq.size() - 1; i++)
         cout << "P" << seq[i] << ", ";
