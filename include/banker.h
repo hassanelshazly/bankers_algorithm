@@ -14,6 +14,9 @@ using namespace std;
  * 
  * @param n num. of processes
  * @param m num. of resources 
+ * 
+ * @returns 1 in case of sucess
+ * @returns 0 otherwise
  */
 int need_matrix(vector<vector<int>> &alloc_m,
                 vector<vector<int>> &max_m,
