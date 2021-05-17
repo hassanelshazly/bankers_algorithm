@@ -45,6 +45,24 @@ int main()
 
     // get the Allocation, Max and Available matrices
     get_matrices(alloc_m, max_m, avail_v, n, m);
+
+    // output need matrix
+    vector<vector<int>> need_m = max_m - alloc_m;
+    cout << "\n\t\tNeed Matrix\n\t";
+    for (int i = 0; i < m; i++)
+        cout << "R" << i << "\t";
+    cout << "\n";
+    for (int i = 0; i < n; i++)
+    {
+        cout << "P" << i << "\t";
+        for (int j = 0; j < m; j++)
+        {
+            cout << need_m[i][j] << "\t";
+        }
+        cout << "\n";
+    }
+    cout << flush;
+
     bool success = true;
     while (true)
     {
@@ -115,7 +133,7 @@ int main()
         }
         else if (enq == 5)
         {
-            cout << "Bye, Bye\n";
+            cout << "\nBye, Bye\n";
             return 0;
         }
         else if (!cin)
