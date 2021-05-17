@@ -44,7 +44,7 @@ int main()
     } while (m <= 0);
 
     // get the Allocation, Max and Available matrices
-    need_matrix(alloc_m, max_m, avail_v, n, m);
+    get_matrices(alloc_m, max_m, avail_v, n, m);
     bool success = true;
     while (true)
     {

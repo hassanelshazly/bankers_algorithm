@@ -1,6 +1,6 @@
 #include "banker.h"
 
-int need_matrix(vector<vector<int>> &alloc_m,
+int get_matrices(vector<vector<int>> &alloc_m,
                 vector<vector<int>> &max_m,
                 vector<int> &avail_v,
                 int n, int m)

@@ -18,7 +18,7 @@ using namespace std;
  * @returns 1 in case of sucess
  * @returns 0 otherwise
  */
-int need_matrix(vector<vector<int>> &alloc_m,
+int get_matrices(vector<vector<int>> &alloc_m,
                 vector<vector<int>> &max_m,
                 vector<int> &avail_v,
                 int n, int m);
