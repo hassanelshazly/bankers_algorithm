@@ -66,7 +66,6 @@ bool is_safe(const vector<vector<int>> &alloc_m,
                 work_v += alloc_m[i];
                 finish_v[i] = true;
                 done = false;
-                break;
             }
         }
     }
